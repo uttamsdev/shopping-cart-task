@@ -2,7 +2,8 @@ import React from 'react'
 
 const Categories = () => {
   return (
-    <div className='page-container mx-auto h-[55px] flex items-center gap-[6px]'>
+   <div className='hidden md:block'>
+     <div className='page-container mx-auto h-[55px] flex items-center gap-[6px]'>
         <div className='flex items-center gap-[4px]'>
             <img src="images/icons/menu.png" alt="" />
             <p className='font-semibold text-primary'>All Categories </p>
@@ -27,6 +28,7 @@ const Categories = () => {
         <p className='text-[#949494] text-[12px]'>Valvet Travel Neck Pillow Folding U-Shaped...</p>
         
     </div>
+   </div>
   )
 }
 
