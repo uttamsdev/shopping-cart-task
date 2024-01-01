@@ -1,12 +1,13 @@
 import './App.css';
+import Categories from './components/pages/Categories';
 import Navbar from './components/pages/Navbar';
 import ProductPage from './components/pages/ProductPage';
 
 function App() {
   return (
-    <div>
+    <div className='bg-[#EDEDED] min-h-screen'>
       <Navbar></Navbar>
-      <div className='h-8 bg-red-50'></div>
+      <Categories></Categories>
       <ProductPage></ProductPage>
     </div>
   );

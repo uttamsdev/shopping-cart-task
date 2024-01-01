@@ -7,8 +7,10 @@ const Navbar = () => {
         <div className=" bg-[#F0F1F1]">
           <div className="w-[1220px] h-[25px] text-[12px] text-accent flex justify-between items-center mx-auto">
             <ul className="flex">
-              <li className="mr-[19px]">
-                <a href="#">Language</a>
+              <li className="mr-[19px] w-16 flex items-center gap-[2px]">
+                <a href="#">Language </a>
+                <img src="images/icons/drop-down.png" alt="" />
+                
               </li>
               <li className="mr-[37px]">
                 <a href="#">Help Center</a>
@@ -32,7 +34,8 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-        <div className="bg-white flex h-[70px] w-[1220px] items-center gap-[31px] mx-auto">
+     <div className="w-full bg-white">
+     <div className=" flex h-[70px] w-[1220px] items-center gap-[31px] mx-auto">
           <div className="h-[70px] flex items-center">
             <img
               className="w-[129px] h-[37px] mr-[28px]"
@@ -67,6 +70,7 @@ const Navbar = () => {
             />
           </div>
         </div>
+     </div>
         <div></div>
       </nav>
     </div>

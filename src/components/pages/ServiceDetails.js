@@ -2,7 +2,8 @@ import React from 'react'
 
 const ServiceDetails = () => {
   return (
-    <div style={{border: "0.5px solid #9C9C9C", borderRadius: "5px"}} className='w-[1188px] h-[150px] flex justify-center items-center mx-auto gap-[115px] mt-[34px] relative'>
+    <div className='pb-[15px]'>
+        <div style={{border: "0.5px solid #9C9C9C", borderRadius: "5px"}} className='w-[1188px] h-[150px] flex justify-center items-center mx-auto gap-[115px] mt-[34px] relative'>
         <div className='flex gap-[57px]'>
             <div className='flex gap-[15px]'>
                 <img className='h-[70px] w-[70px]' src="images/user.png" alt="" />
@@ -14,7 +15,7 @@ const ServiceDetails = () => {
                     </div>
                     <div className='flex gap-[15px] mt-[15px]'>
                         <p className='text-[#37A5BF] text-[14px] font-medium'>Visit Store</p>
-                        <p className='flex items-center'><img className='w-[14px] h-[14px]' src="images/icons/msg.png" alt="" /><p className='text-[#37A5BF] text-[12px] font-medium'>Chat</p></p>
+                        <p className='flex items-center gap-[2px]'><img className='w-[14px] h-[14px]' src="images/icons/msg.png" alt="" /><p className='text-[#37A5BF] text-[12px] font-medium'>Chat</p></p>
                     </div>
                 </div>
                 <img className='absolute left-[535px]' src="images/icons/div.png" alt="" />
@@ -55,6 +56,7 @@ const ServiceDetails = () => {
                 <p className='flex items-center gap-[5px] mt-[5px]'><img className='w-[16px] h-[16px]' src="images/icons/call.png" alt="" /><p className='text-primary text-[14px]'>Cash on delivery available</p></p>
             </div>
         </div>
+    </div>
     </div>
   )
 }

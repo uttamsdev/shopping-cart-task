@@ -175,7 +175,7 @@ const ProductPage = () => {
                 Only 46 pieces available
               </div>
             </div>
-            <div className="flex gap-[15px] mt-[41px]">
+            <div className="flex gap-[15px] mt-[28px]">
               <button className="w-[180px] h-[44px] bg-primary rounded-sm text-[14px] font-medium text-white">
                 Buy Now
               </button>
