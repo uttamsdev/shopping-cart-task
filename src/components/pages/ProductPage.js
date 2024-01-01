@@ -22,14 +22,16 @@ const ProductPage = () => {
   return (
     <div className="bg-[#EDEDED]">
       <div className="relative md:hidden">
-        <div className="absolute left-8 top-0 z-10 flex items-center justify-center gap-2">
-          <img
-            className="h-[28px] w-[28px]"
-            src="images/icons/back-ic.png"
-            alt=""
-          />
+        <div className="absolute left-8 top-[8px] z-10 flex items-center justify-center gap-2">
+          <div className="w-[28px] h-[28px] bg-[#00000073] rounded-full flex justify-center items-center">
+            <img src="images/icons/backp.png" alt="" />
+          </div>
           <div className="flex items-center relative">
-            <img className="absolute left-2" src="images/icons/search.png" alt="" />
+            <img
+              className="absolute left-2"
+              src="images/icons/search.png"
+              alt=""
+            />
             <input
               style={{ borderRadius: "45px" }}
               type="text"
@@ -37,10 +39,17 @@ const ProductPage = () => {
               placeholder="Search product"
             />
           </div>
-          <img src="images/icons/cart-ic.png" alt="" />
-          <img src="images/icons/menu-ic.png" alt="" />
+          <div className="w-[28px] h-[28px] bg-[#00000073] rounded-full flex justify-center items-center relative">
+            <div className="h-[14px] w-[14px] rounded-full bg-[#00000073] text-[6px] text-white absolute text-center font-medium top-[-2px] right-0">
+              20
+            </div>
+            <img src="images/icons/sp.png" alt="" />
+          </div>
+          <div className="w-[28px] h-[28px] bg-[#00000073] rounded-full flex justify-center items-center">
+            <img src="images/icons/menup.png" alt="" />
+          </div>
         </div>
-        <div className="bg-[#00000073] w-[24px] h-[16px] text-[12px] rounded-sm text-white text-center absolute z-10  top-96 left-48">
+        <div className="bg-[#00000073] w-[24px] h-[16px] text-[12px] rounded-sm text-white text-center absolute z-10  top-[360px] left-48">
           1/9
         </div>
       </div>
