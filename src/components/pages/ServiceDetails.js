@@ -3,7 +3,7 @@ import React from "react";
 const ServiceDetails = () => {
   return (
     <div className="pb-[15px]">
-      <div className="border-none md:border-2 md:border-[#9C9C9C] w-full md:w-[1188px] h-auto md:h-[150px] flex flex-col md:flex-row justify-center items-start md:items-center mx-auto gap-[12px] md:gap-[115px] mt-[34px] relative">
+      <div className="md:border border-solid border-[#9C9C9C] w-full md:w-[1188px] h-auto md:h-[150px] flex flex-col md:flex-row justify-center items-start md:items-center mx-auto gap-[12px] md:gap-[115px] mt-[34px] relative rounded-sm">
         <div className=" flex gap-[0px] md:gap-[57px] border border-[#9C9C9C] md:border-none p-[10px] md:p-0 mx-auto md:mx-0 rounded-sm md:rounded-none">
           <div className="flex gap-[15px] w-full">
             <img className="h-[70px] w-[70px]" src="images/user.png" alt="" />
@@ -68,7 +68,7 @@ const ServiceDetails = () => {
             </div>
           </div>
         </div>
-        <div className=" pl-[8px] md:pl-0 border-t border-[#9C9C9C] w-full md:w-[175px] md:border-none order-2 md:order-1">
+        <div className=" pl-[8px] md:pl-0 border-t border-[#9C9C9C] w-full md:w-[175px] md:border-none order-2 md:order-1 p-2 md:p-0">
           <p className="text-[#5A5A5A] text-[10px] md:text-[16px] font-medium">
             Service:
           </p>
@@ -127,9 +127,10 @@ const ServiceDetails = () => {
                 src="images/icons/call.png"
                 alt=""
               />
-              <p className="text-primary text-[10px] md:text-[14px]">
-                Cash on delivery available
-              </p>
+              <div className="text-primary text-[10px] md:text-[14px] flex items-center justify-between w-full">
+                <p>Cash on delivery available</p>
+                <p className="text-secondary text-[8px] md:hidden">৳ 55</p>
+              </div>
             </p>
           </div>
         </div>

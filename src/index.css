@@ -16,6 +16,15 @@ code {
 .border-sm{
   border: 0.5px solid #DFDFDF;
 }
+.placeholder-text::placeholder{
+  font-size: 9px;
+  position: absolute;
+  top: 8px;
+}
+/* ::placeholder{
+  size: 9px;
+  font-size: 9px;
+} */
 /* ::placeholder{
   size: 14px;
 } */

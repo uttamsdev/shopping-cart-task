@@ -21,10 +21,33 @@ const ProductPage = () => {
   ];
   return (
     <div className="bg-[#EDEDED]">
-      <div className="bg-white w-full md:w-[1220px] mx-auto p-[0px] md:p-4">
+      <div className="relative md:hidden">
+        <div className="absolute left-8 top-0 z-10 flex items-center justify-center gap-2">
+          <img
+            className="h-[28px] w-[28px]"
+            src="images/icons/back-ic.png"
+            alt=""
+          />
+          <div className="flex items-center relative">
+            <img className="absolute left-2" src="images/icons/search.png" alt="" />
+            <input
+              style={{ borderRadius: "45px" }}
+              type="text"
+              className="  bg-[#00000073] outline-none border-none w-[229px] h-[28px] text-white placeholder-white pl-6 placeholder-text"
+              placeholder="Search product"
+            />
+          </div>
+          <img src="images/icons/cart-ic.png" alt="" />
+          <img src="images/icons/menu-ic.png" alt="" />
+        </div>
+        <div className="bg-[#00000073] w-[24px] h-[16px] text-[12px] rounded-sm text-white text-center absolute z-10  top-96 left-48">
+          1/9
+        </div>
+      </div>
+      <div className="bg-white md:w-[1220px] mx-auto p-[0px] md:p-4">
         <div className="flex flex-col sm:flex-row gap-[20px] relative items-center md:items-start">
           <div>
-            <div className="w-full h-[373px] md:w-[450px] md:h-[450px] ">
+            <div className=" w-full h-[400px] md:w-[450px] md:h-[450px] ">
               <img
                 className="rounded-sm"
                 src="images/watch/watch-1.png"
@@ -56,7 +79,7 @@ const ProductPage = () => {
           </div>
 
           <div className=" w-[328px] md:w-full">
-            <h1 className="text-[#2E2E2E] text-[14px] md:text-[20px] leading-7 mb-[8px] md:mb-3 mt-[16px] md:mt-0">
+            <h1 className="text-[#2E2E2E] text-[14px] md:text-[20px] leading-7 mb-[8px] md:mb-3 ">
               Valvet Travel Neck Pillow Folding U-Shaped Memory Foam + Eye Masks
               Ear buds Soft Massage Pillow for Sleeping in Bus Car Plane
             </h1>
