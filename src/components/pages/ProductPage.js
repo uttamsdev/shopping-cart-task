@@ -34,14 +34,14 @@ const ProductPage = () => {
   const images = [
     "images/watch/watch-2.png",
     "images/watch/watch-3.png",
-    "images/watch/watch-4.png",
+    "images/watch/watch-2.png",
     "images/watch/watch-5.png",
     "images/watch/watch-6.png"
   ]
   const watches = [
     { img: "images/watch/watch-2.png" },
     { img: "images/watch/watch-3.png" },
-    { img: "images/watch/watch-4.png" },
+    { img: "images/watch/watch-2.png" },
     { img: "images/watch/watch-5.png" },
     { img: "images/watch/watch-6.png" },
   ];
@@ -136,8 +136,10 @@ const ProductPage = () => {
             </div>
             <div className="hidden md:block">
               <div className="flex gap-[5px] mt-[10px] relative">
-                {watches.map((item) => (
-                  <img className="rounded-sm" src={item.img} alt=""></img>
+                {watches.map((item, index) => (
+                  <img style={{
+                    border: index === currentIndex ? '2px solid orange' : 'none',
+                  }} className="rounded-sm" src={item.img} alt=""></img>
                 ))}
                 <img
                  onClick={showPrevious}
