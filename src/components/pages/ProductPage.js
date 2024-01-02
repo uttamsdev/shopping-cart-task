@@ -72,16 +72,13 @@ const ProductPage = () => {
 
 
   const onTouchStart = (event) => {
-    // Store the starting X position of the touch
     touchStartX = event.touches[0].clientX;
   };
 
   const onTouchEnd = (event) => {
-    // Calculate the difference between start and end X positions
     const touchEndX = event.changedTouches[0].clientX;
     const difference = touchStartX - touchEndX;
     
-    // Determine swipe direction based on the difference
     if (Math.abs(difference) > swipeThreshold) {
       if (difference > 0) {
         handleSwipe('left');
