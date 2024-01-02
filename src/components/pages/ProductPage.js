@@ -1,9 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import ServiceDetails from "./ServiceDetails";
 import { MyContext } from "../context/Context";
 
 const ProductPage = () => {
   const { cartValue, setCartValue } = useContext(MyContext);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+  let formatteQuantity = String(quantity).padStart(2, '0');
+
   const stars = Array.from({ length: 5 });
   const sizes = [{ size: "M" }, { size: "L" }, { size: "XL" }, { size: "XXL" }];
   const colors = [
@@ -14,6 +18,26 @@ const ProductPage = () => {
     { color: "#E01FFF" },
     { color: "#FF1F1F" },
   ];
+
+  const doPlus = () => {
+    setQuantity(quantity+1);
+  }
+
+  const doMinus = () => {
+    if(quantity!==1){
+      setQuantity(quantity-1);
+    }
+    else {
+      alert("Your quantity must be at least one");
+    }
+  }
+  const images = [
+    "images/watch/watch-2.png",
+    "images/watch/watch-3.png",
+    "images/watch/watch-4.png",
+    "images/watch/watch-5.png",
+    "images/watch/watch-6.png"
+  ]
   const watches = [
     { img: "images/watch/watch-2.png" },
     { img: "images/watch/watch-3.png" },
@@ -21,13 +45,20 @@ const ProductPage = () => {
     { img: "images/watch/watch-5.png" },
     { img: "images/watch/watch-6.png" },
   ];
-
   const addToCart = () => {
     setCartValue(cartValue+1);
   }
+  const showNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const showPrevious = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
   return (
     <div className="bg-[#EDEDED]">
-      <div className="relative md:hidden">
+      <div className="w-full relative md:hidden">
         <div className="absolute left-0 top-0 right-0 bottom-0 pt-[20px] z-10 flex items-center justify-center gap-2">
           <div className="w-[28px] h-[28px] bg-[#00000073] rounded-full flex justify-center items-center">
             <img src="images/icons/backp.png" alt="" />
@@ -55,17 +86,17 @@ const ProductPage = () => {
             <img src="images/icons/menup.png" alt="" />
           </div>
         </div>
-        <div className="bg-[#00000073] w-[24px] h-[16px] text-[12px] rounded-sm text-white text-center absolute z-10  left-1/2  top-[360px] transform -translate-x-1/2">
+        <div className="bg-[#00000073] w-[24px] h-[16px] text-[12px] rounded-sm text-white text-center absolute z-10  left-1/2  top-[345px] transform -translate-x-1/2">
           1/9
         </div>
       </div>
       <div className="bg-white md:w-[1220px] mx-auto p-[0px] md:p-4 relative z-0">
-        <div className="flex flex-col sm:flex-row gap-[8px] md:gap-[20px] relative items-center md:items-start">
+        <div className="flex flex-col sm:flex-row gap-[8px] md:gap-[20px] relative md:items-star">
           <div>
-            <div className=" w-full min-h-[373px] md:w-[450px] md:h-[450px] ">
+            <div className="w-full min-h-[373px] md:w-[450px] md:h-[450px] ">
               <img
-                className="rounded-sm"
-                src="images/watch/watch-1.png"
+                className="w-full rounded-sm  min-h-[373px] md:w-[450px] md:h-[450px] "
+                src={images[currentIndex]}
                 alt=""
               />
             </div>
@@ -75,16 +106,18 @@ const ProductPage = () => {
                   <img className="rounded-sm" src={item.img} alt=""></img>
                 ))}
                 <img
-                  className="absolute left-0 bottom-8"
+                 onClick={showPrevious}
+                  className="absolute left-0 bottom-8 cursor-pointer"
                   src="images/icons/arrow-left.png"
                   alt=""
                 />
-                <img
-                  className="absolute right-1 bottom-8"
+                <img 
+                  onClick={showNext}
+                  className="absolute right-1 bottom-8 cursor-pointer"
                   src="images/icons/arrow-right.png"
                   alt=""
                 />
-                <img
+                <img 
                   className="absolute left-0 bottom-0 "
                   src="images/icons/video.png"
                   alt=""
@@ -93,12 +126,12 @@ const ProductPage = () => {
             </div>
           </div>
 
-          <div className=" w-[328px] md:w-full">
-            <h1 className="text-[#2E2E2E] text-[14px] md:text-[20px] leading-7 mb-[8px] md:mb-3 ">
+          <div className="box-border w-full  md:pl-0 md:pr-0  md:w-full">
+            <h1 className="text-[#2E2E2E] text-[14px] md:text-[20px] leading-7 mb-[8px] md:mb-3 pl-[8px] ">
               Valvet Travel Neck Pillow Folding U-Shaped Memory Foam + Eye Masks
               Ear buds Soft Massage Pillow for Sleeping in Bus Car Plane
             </h1>
-            <div className="flex flex-col md:flex-row justify-between mb-[12px] md:mb-0">
+            <div className="flex flex-col md:flex-row justify-between mb-[12px] md:mb-0 pl-[8px] ">
               <div className="flex items-center">
                 <p className="text-sm md:text-base font-medium text-accent mr-[6px]">
                   4.7
@@ -113,13 +146,13 @@ const ProductPage = () => {
                   ))}
                 </div>
                 <p className="border-r-2 px-[10px]">
-                  <span className="text-[#5A5A5A] text-sm md:text-base font-medium">
+                  <span className="text-[#5A5A5A] text-sm md:text-base font-medium mr-[4px]">
                     24
                   </span>
                   <span className="text-sm text-[#9C9C9C]">Ratings</span>
                 </p>
                 <p>
-                  <span className="text-[#5A5A5A] text-base font-medium pl-[10px]">
+                  <span className="text-[#5A5A5A] text-base font-medium pl-[10px] mr-[4px]">
                     2.5k
                   </span>
                   <span className="text-sm text-[#9C9C9C]">Sold</span>
@@ -143,7 +176,7 @@ const ProductPage = () => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center pl-[8px]">
               <p className="font-medium text-primary text-[16px] md:text-[32px] mr-[10px]">
                 ৳ 1,990/-
               </p>
@@ -154,13 +187,13 @@ const ProductPage = () => {
                 <p>-34% OFF</p>
               </p>
             </div>
-            <p className="text-[12px] md:text-sm mt-[12px] md:mt-[10px]">
+            <p className="text-[12px] md:text-sm mt-[12px] md:mt-[10px] pl-[8px]">
               <span className="text-secondary">Brand:</span>
               <span className=" text-accent font-normal md:font-medium">
                 No brand
               </span>
             </p>
-            <div className="flex items-center mt-[12px] md:mt-[20px]">
+            <div className="flex items-center mt-[12px] md:mt-[20px] pl-[8px]">
               <p className="text-[14px] text-secondary mr-[8px]">Size: </p>
               <div className="flex items-center">
                 {sizes.map((size, index) => (
@@ -195,13 +228,13 @@ const ProductPage = () => {
                 </div>
               </div>
             </div>
-            <p className="text-[12px] md:text-sm  mt-[12px] md:mt-[20px]">
+            <p className="text-[12px] md:text-sm  mt-[12px] md:mt-[20px] pl-[8px]">
               <span className="text-secondary">Color:</span>
               <span className=" text-accent font-normal md:font-medium">
                 Black
               </span>
             </p>
-            <div className="flex gap-[5px] mt-[5px] md:mt-[10px]">
+            <div className="flex gap-[5px] mt-[5px] md:mt-[10px] pl-[8px]">
               {colors.map((item) => (
                 <div className=" h-[42px] w-[42px] rounded-sm border-sm relative flex items-center justify-center">
                   <div
@@ -211,29 +244,31 @@ const ProductPage = () => {
                 </div>
               ))}
             </div>
-            <p className="text-[12px] md:text-sm  mt-[12px] md:mt-[34px]">
+            <p className="text-[12px] md:text-sm  mt-[12px] md:mt-[34px] pl-[8px]">
               <span className="text-secondary">Sku:</span>
               <span className=" text-accent font-normal md:font-medium">
                 hdgfhdgf6756dsghgf7
               </span>
             </p>
             <div className="flex items-center mt-[12px] md:mt-[20px]">
-              <p className="text-[12px] md:text-sm  text-secondary mr-[8px]">
+              <p className="text-[12px] md:text-sm  text-secondary mr-[8px] pl-[8px]">
                 Quantity:
               </p>
               <div className="bg-[#F7F7F7] rounded-sm w-[92px] h-[38px] md:w-[106px] md:h-[40px] flex  justify-center  items-center gap-[4.2px]">
                 <div
+                  onClick={doMinus} 
                   style={{ borderRadius: "5px" }}
-                  className="w-[26px] h-[26px] flex  justify-center  items-center  bg-white"
+                  className="w-[26px] h-[26px] flex  justify-center  items-center  bg-white cursor-pointer"
                 >
-                  <img src="images/icons/Minus.png" alt="" />
+                  <img  src="images/icons/Minus.png" alt="" />
                 </div>
-                <div className="text-accent text-sm">01</div>
+                <div className="text-accent text-sm">{formatteQuantity}</div>
                 <div
+                  onClick={doPlus} 
                   style={{ borderRadius: "5px" }}
-                  className="w-[26px] h-[26px] flex  justify-center  items-center bg-white"
+                  className="w-[26px] h-[26px] flex  justify-center  items-center bg-white cursor-pointer"
                 >
-                  <img src="images/icons/Add.png" alt="" />
+                  <img  src="images/icons/Add.png" alt="" />
                 </div>
               </div>
               <div className="text-[#F97316] text-[12px] font-medium ml-[10px]">

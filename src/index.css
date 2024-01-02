@@ -21,7 +21,9 @@ code {
   position: absolute;
   top: 8px;
 }
-
+.box-border {
+  box-sizing: border-box;
+}
 @media (min-width: 768px) {
   .border-sm{
     border: 0.5px solid #DFDFDF;
