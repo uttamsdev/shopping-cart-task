@@ -121,7 +121,7 @@ const ProductPage = () => {
           </div>
         </div>
         <div className="bg-[#00000073] w-[24px] h-[16px] text-[12px] rounded-sm text-white text-center absolute z-10  left-1/2  top-[345px] transform -translate-x-1/2">
-          1/9
+          {currentIndex+1}/{images.length}
         </div>
       </div>
       <div className="bg-white md:w-[1220px] mx-auto p-[0px] md:p-4 relative z-0">
