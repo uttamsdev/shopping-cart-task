@@ -56,6 +56,43 @@ const ProductPage = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
+  let touchStartX = 0;
+  const swipeThreshold = 50;
+  const handleSwipe = (direction) => {
+    if (direction === 'left') {
+      if (currentIndex < images.length - 1) {
+        setCurrentIndex(currentIndex + 1);
+      }
+    } else if (direction === 'right') {
+      if (currentIndex > 0) {
+        setCurrentIndex(currentIndex - 1);
+      }
+    }
+  };
+
+
+  const onTouchStart = (event) => {
+    // Store the starting X position of the touch
+    touchStartX = event.touches[0].clientX;
+  };
+
+  const onTouchEnd = (event) => {
+    // Calculate the difference between start and end X positions
+    const touchEndX = event.changedTouches[0].clientX;
+    const difference = touchStartX - touchEndX;
+    
+    // Determine swipe direction based on the difference
+    if (Math.abs(difference) > swipeThreshold) {
+      if (difference > 0) {
+        handleSwipe('left');
+      } else {
+        handleSwipe('right');
+      }
+    }
+  };
+
+
+
   return (
     <div className="bg-[#EDEDED]">
       <div className="w-full relative md:hidden">
@@ -92,7 +129,7 @@ const ProductPage = () => {
       </div>
       <div className="bg-white md:w-[1220px] mx-auto p-[0px] md:p-4 relative z-0">
         <div className="flex flex-col sm:flex-row gap-[8px] md:gap-[20px] relative md:items-star">
-          <div>
+          <div onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
             <div className="w-full min-h-[373px] md:w-[450px] md:h-[450px] ">
               <img
                 className="w-full rounded-sm  min-h-[373px] md:w-[450px] md:h-[450px] "
