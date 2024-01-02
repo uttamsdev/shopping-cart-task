@@ -22,7 +22,7 @@ const ProductPage = () => {
   return (
     <div className="bg-[#EDEDED]">
       <div className="relative md:hidden">
-        <div className="absolute left-8 top-[8px] z-10 flex items-center justify-center gap-2">
+        <div className="absolute left-0 top-0 right-0 bottom-0 pt-[20px] z-10 flex items-center justify-center gap-2">
           <div className="w-[28px] h-[28px] bg-[#00000073] rounded-full flex justify-center items-center">
             <img src="images/icons/backp.png" alt="" />
           </div>
@@ -49,14 +49,14 @@ const ProductPage = () => {
             <img src="images/icons/menup.png" alt="" />
           </div>
         </div>
-        <div className="bg-[#00000073] w-[24px] h-[16px] text-[12px] rounded-sm text-white text-center absolute z-10  top-[360px] left-48">
+        <div className="bg-[#00000073] w-[24px] h-[16px] text-[12px] rounded-sm text-white text-center absolute z-10  left-1/2  top-[360px] transform -translate-x-1/2">
           1/9
         </div>
       </div>
-      <div className="bg-white md:w-[1220px] mx-auto p-[0px] md:p-4">
-        <div className="flex flex-col sm:flex-row gap-[20px] relative items-center md:items-start">
+      <div className="bg-white md:w-[1220px] mx-auto p-[0px] md:p-4 relative z-0">
+        <div className="flex flex-col sm:flex-row gap-[8px] md:gap-[20px] relative items-center md:items-start">
           <div>
-            <div className=" w-full h-[400px] md:w-[450px] md:h-[450px] ">
+            <div className=" w-full min-h-[373px] md:w-[450px] md:h-[450px] ">
               <img
                 className="rounded-sm"
                 src="images/watch/watch-1.png"
@@ -109,13 +109,13 @@ const ProductPage = () => {
                 <p className="border-r-2 px-[10px]">
                   <span className="text-[#5A5A5A] text-sm md:text-base font-medium">
                     24
-                  </span>{" "}
+                  </span>
                   <span className="text-sm text-[#9C9C9C]">Ratings</span>
                 </p>
                 <p>
                   <span className="text-[#5A5A5A] text-base font-medium pl-[10px]">
                     2.5k
-                  </span>{" "}
+                  </span>
                   <span className="text-sm text-[#9C9C9C]">Sold</span>
                 </p>
               </div>
@@ -148,13 +148,13 @@ const ProductPage = () => {
                 <p>-34% OFF</p>
               </p>
             </div>
-            <p className="text-[12px] md:text-sm mt-[10px]">
-              <span className="text-secondary">Brand:</span>{" "}
+            <p className="text-[12px] md:text-sm mt-[12px] md:mt-[10px]">
+              <span className="text-secondary">Brand:</span>
               <span className=" text-accent font-normal md:font-medium">
                 No brand
               </span>
             </p>
-            <div className="flex items-center mt-[14px] md:mt-[20px]">
+            <div className="flex items-center mt-[12px] md:mt-[20px]">
               <p className="text-[14px] text-secondary mr-[8px]">Size: </p>
               <div className="flex items-center">
                 {sizes.map((size, index) => (
@@ -190,12 +190,12 @@ const ProductPage = () => {
               </div>
             </div>
             <p className="text-[12px] md:text-sm  mt-[12px] md:mt-[20px]">
-              <span className="text-secondary">Color:</span>{" "}
+              <span className="text-secondary">Color:</span>
               <span className=" text-accent font-normal md:font-medium">
                 Black
               </span>
             </p>
-            <div className="flex gap-[5px] mt-[10px]">
+            <div className="flex gap-[5px] mt-[5px] md:mt-[10px]">
               {colors.map((item) => (
                 <div className=" h-[42px] w-[42px] rounded-sm border-sm relative flex items-center justify-center">
                   <div
@@ -206,14 +206,14 @@ const ProductPage = () => {
               ))}
             </div>
             <p className="text-[12px] md:text-sm  mt-[12px] md:mt-[34px]">
-              <span className="text-secondary">Sku:</span>{" "}
+              <span className="text-secondary">Sku:</span>
               <span className=" text-accent font-normal md:font-medium">
                 hdgfhdgf6756dsghgf7
               </span>
             </p>
             <div className="flex items-center mt-[12px] md:mt-[20px]">
               <p className="text-[12px] md:text-sm  text-secondary mr-[8px]">
-                Quantity:{" "}
+                Quantity:
               </p>
               <div className="bg-[#F7F7F7] rounded-sm w-[92px] h-[38px] md:w-[106px] md:h-[40px] flex  justify-center  items-center gap-[4.2px]">
                 <div

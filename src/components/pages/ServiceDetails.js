@@ -3,7 +3,7 @@ import React from "react";
 const ServiceDetails = () => {
   return (
     <div className="pb-[15px]">
-      <div className="border-sm w-full md:w-[1188px] h-auto md:h-[150px] flex flex-col md:flex-row justify-center items-start md:items-center mx-auto gap-[12px] md:gap-[115px] mt-[34px] relative rounded-sm">
+      <div className="border-sm w-full md:w-[1188px] h-auto md:h-[150px] flex flex-col md:flex-row justify-center items-start md:items-center mx-auto gap-[12px] md:gap-[115px] mt-[12px] md:mt-[34px] relative rounded-sm">
         <div className=" flex gap-[0px] md:gap-[57px] custom-border md:border-none p-[10px] md:p-0 mx-auto md:mx-0 rounded-sm md:rounded-none">
           <div className="flex gap-[15px] w-full">
             <img className="h-[70px] w-[70px]" src="images/user.png" alt="" />
