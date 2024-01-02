@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import ServiceDetails from "./ServiceDetails";
+import { MyContext } from "../context/Context";
 
 const ProductPage = () => {
+  const { cartValue, setCartValue } = useContext(MyContext);
   const stars = Array.from({ length: 5 });
   const sizes = [{ size: "M" }, { size: "L" }, { size: "XL" }, { size: "XXL" }];
   const colors = [
@@ -19,6 +21,10 @@ const ProductPage = () => {
     { img: "images/watch/watch-5.png" },
     { img: "images/watch/watch-6.png" },
   ];
+
+  const addToCart = () => {
+    setCartValue(cartValue+1);
+  }
   return (
     <div className="bg-[#EDEDED]">
       <div className="relative md:hidden">
@@ -239,7 +245,7 @@ const ProductPage = () => {
                 <button className="w-[180px] h-[44px] bg-primary rounded-sm text-[14px] font-medium text-white">
                   Buy Now
                 </button>
-                <button className="w-[180px] h-[44px] bg-[#FCD34D] rounded-sm text-[14px] font-medium text-[#2E2E2E] flex justify-center items-center gap-[10px]">
+                <button onClick={addToCart} className="w-[180px] h-[44px] bg-[#FCD34D] rounded-sm text-[14px] font-medium text-[#2E2E2E] flex justify-center items-center gap-[10px]">
                   <img src="images/icons/cart.png" alt="" />
                   Add to cart
                 </button>

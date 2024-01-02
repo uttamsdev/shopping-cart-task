@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { MyContext } from "../context/Context";
 
 const Navbar = () => {
+  const { cartValue } = useContext(MyContext);
   return (
     <div>
       <nav className="h-[95px] hidden md:block">
@@ -59,7 +61,12 @@ const Navbar = () => {
             <div className="flex gap-[12px]">
               <img src="images/icons/people-icon.png" alt="" />
               <img src="images/icons/love-icon.png" alt="" />
-              <img src="images/icons/cart-icon.png" alt="" />
+              <div className="relative">
+                 <img src="images/icons/cart-icon.png" alt="" />
+                 {
+                  cartValue > 0 ? <div className="w-[22px] h-[22px] rounded-full bg-slate-500 absolute top-[-8px] right-[-8px] text-white flex items-center justify-center text-[14px]">{cartValue}</div> : ""
+                 }
+              </div>
             </div>
           </div>
           <div>
