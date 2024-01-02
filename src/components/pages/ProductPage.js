@@ -126,7 +126,7 @@ const ProductPage = () => {
             </div>
           </div>
 
-          <div className="box-border w-full  md:pl-0 md:pr-0  md:w-full">
+          <div className="box-border w-full  md:pl-0 md:pr-0  md:w-full overflow-x-hidden">
             <h1 className="text-[#2E2E2E] text-[14px] md:text-[20px] leading-7 mb-[8px] md:mb-3 pl-[8px] ">
               Valvet Travel Neck Pillow Folding U-Shaped Memory Foam + Eye Masks
               Ear buds Soft Massage Pillow for Sleeping in Bus Car Plane
